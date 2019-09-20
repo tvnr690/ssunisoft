@@ -1,4 +1,54 @@
-@extends('multiauth::layouts.app') 
+@extends('multiauth::layouts.master') 
+
+@section('breadcrum')
+    Roles
+@endsection
+
+@section('main-content')
+    <!-- Main content -->
+	<div class="content-wrapper">
+        <!-- Content area -->
+        <div class="content">
+            <!-- Basic responsive configuration -->
+            <div class="card">
+                        <div class="card-header header-elements-inline">
+                            <h5 class="card-title">Roles Tables</h5>
+                            <div class="header-elements">
+                                <div class="list-icons">
+                                    <a class="list-icons-item" data-action="collapse"></a>
+                                </div>
+                            </div>
+                        </div>
+                        @include('multiauth::message')
+                        <div class="card-body">
+                            The <b>Roles</b> will specify the responsibility of the Admins.
+                        </div>
+
+
+                        <table class="table datatable-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Job</th>
+                                    <th>Created</th>
+                                    <th>No of Admins</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                </div>
+                <!-- /basic responsive configuration -->
+            </div>
+            <!-- /content area -->
+        </div>
+        <!-- /main content -->
+    @endsection
+
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
