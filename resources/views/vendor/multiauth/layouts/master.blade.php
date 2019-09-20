@@ -344,7 +344,7 @@
                                 <li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">New Admin</a></li>
                             </ul>
                         </li>
-						{{-- <li class="nav-item nav-item-submenu">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Starter kit</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
@@ -380,7 +380,7 @@
 								<li class="nav-item"><a href="../seed/layout_fixed.html" class="nav-link">Fixed layout</a></li>
 							</ul>
 						</li>
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a href="changelog.html" class="nav-link">
 								<i class="icon-list-unordered"></i>
 								<span>Changelog</span>
@@ -464,7 +464,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Dashboard</h4>
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - @yield('breadcrum') </h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 
@@ -2272,7 +2272,7 @@
 	<script src="{{ asset('global_assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
 	<script src="{{ asset('global_assets/js/plugins/forms/styling/switch.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_checkboxes_radios.js') }}"></script>
-    
+
     <!-- Theme JS files -->
 	<script src="{{ asset('global_assets/js/plugins/forms/styling/uniform.min.js') }}"></script>
 	<script src="{{ asset('global_assets/js/plugins/notifications/pnotify.min.js') }}"></script>
@@ -2280,7 +2280,7 @@
     <script src="{{ asset('global_assets/js/demo_pages/form_multiselect.js') }}"></script>
 
 
-    
+
 
 </body>
 </html>

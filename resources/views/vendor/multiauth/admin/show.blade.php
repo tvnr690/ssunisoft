@@ -1,4 +1,4 @@
-@extends('multiauth::layouts.master') 
+@extends('multiauth::layouts.master')
 
 @section('breadcrum')
     Roles
@@ -21,22 +21,54 @@
                         </div>
                         @include('multiauth::message')
                         <div class="card-body">
-                            The <b>Roles</b> will specify the responsibility of the Admins.
+                            The <b>Admins</b> will have the responsibility of the Admins.
                         </div>
-
-
                         <table class="table datatable-responsive">
                             <thead>
                                 <tr>
-                                    <th>Role</th>
-                                    <th>Job</th>
+                                    <th>Admin Name</th>
+                                    <th>Admin Email</th>
+                                    <th>Roles</th>
                                     <th>Created</th>
-                                    <th>No of Admins</th>
+                                    <th>Status</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @foreach ($admins as $admin)
+                                <tr>
+                                    <td>{{ $admin->name }}</td>
+                                    <td>{{ $admin->email }}</td>
+                                    <td>
+                                        <span class="badge">
+                                            @foreach ($admin->roles as $role)
+                                            <span class="badge-info badge-pill ml-2">
+                                                {{ $role->name }}
+                                            </span>
+                                             @endforeach
+                                        </span>
+                                    </td>
+                                    <td>{{ $admin->created_at }}</td>
+                                    <td><span class="badge {{ $admin->active? 'badge-success' : 'badge-danger' }}">{{ $admin->active? 'Active' : 'Inactive' }}</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $admin->id }}').submit();"><i class="icon-bin mr-3 icon"></i>Delete</a>
+                                                    <form id="delete-form-{{ $admin->id }}" action="{{ route('admin.delete',[$admin->id]) }}" method="POST" style="display: none;">
+                                                        @csrf @method('delete')
+                                                    </form>
+                                                    <a href="{{route('admin.edit',[$admin->id])}}" class="dropdown-item"><i class="icon-pencil5 mr-3 icon"></i>Edit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                 </div>

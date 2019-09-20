@@ -28,6 +28,7 @@
                         <table class="table datatable-responsive">
                             <thead>
                                 <tr>
+                                    <th>S. No</th>
                                     <th>Role</th>
                                     <th>Job</th>
                                     <th>Created</th>
@@ -38,6 +39,7 @@
                             <tbody>
                             @foreach ($roles as $role)
                                 <tr>
+                                    <td>1</td>
                                     <td>{{ $role->name }}</td>
                                     <td>Example work</td>
                                     <td>{{ $role->created_at }}</td>
