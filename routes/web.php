@@ -11,10 +11,20 @@
 |
 */
 
+/* +++++++++++++++++++++ Client Routes +++++++++++++++++++++++++ */
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/courses', 'HomeController@courses')->name('courses');
+Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');
+Route::get('/blog', 'HomeController@blog')->name('blog');
+Route::get('/contact', 'HomeController@contact')->name('contact');
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
