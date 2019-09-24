@@ -369,14 +369,13 @@
 										<li class="nav-item"><a href="{{ route('admin.sub_category.create') }}" class="nav-link">Add New Sub Category</a></li>
 									</ul>
 								</li>
-								{{-- <li class="nav-item nav-item-submenu">
+								<li class="nav-item nav-item-submenu">
 									<a href="#" class="nav-link">Tags</a>
 									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Left sidebar</a></li>
-										<li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Right sidebar</a></li>
+										<li class="nav-item"><a href="{{ route('admin.tag') }}" class="nav-link">All Tags</a></li>
+										<li class="nav-item"><a href="{{ route('admin.tag.create') }}" class="nav-link">Create New Tag</a></li>
 									</ul>
-                                </li> --}}
-
+                                </li>
 							</ul>
 						</li>
 						{{-- <li class="nav-item">

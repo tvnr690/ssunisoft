@@ -42,6 +42,13 @@ Route::delete('admin/sub_category/{sub_category}', 'SubCategoryController@destro
 Route::get('admin/sub_category/{sub_category}/edit', 'SubCategoryController@edit')->name('admin.sub_category.edit');
 Route::patch('admin/sub_category/{sub_category}', 'SubCategoryController@update')->name('admin.sub_category.update');
 
+/* +++++++++++++++++++++ Admin Blog Tag Routes +++++++++++++++++++++++++ */
+Route::get('admin/tag', 'TagController@index')->name('admin.tag');
+Route::get('admin/tag/create', 'TagController@create')->name('admin.tag.create');
+Route::post('admin/tag/store', 'TagController@store')->name('admin.tag.store');
+Route::delete('admin/tag/{tag}', 'TagController@destroy')->name('admin.tag.delete');
+Route::get('admin/tag/{tag}/edit', 'TagController@edit')->name('admin.tag.edit');
+Route::patch('admin/tag/{tag}', 'TagController@update')->name('admin.tag.update');
 
 
 
