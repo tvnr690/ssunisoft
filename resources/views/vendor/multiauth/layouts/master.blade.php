@@ -345,39 +345,38 @@
                             </ul>
                         </li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Starter kit</span></a>
+							<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Blog Post </span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Horizontal navigation</a></li>
-								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">No sidebar</a></li>
-								<li class="nav-item"><a href="../seed/sidebar_main.html" class="nav-link">1 sidebar</a></li>
+                                {{-- <li class="nav-item nav-item-submenu">
+                                    <a href="#" class="nav-link">Posts</a>
+                                    <ul class="nav nav-group-sub">
+                                        <li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Left sidebar</a></li>
+                                        <li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Right sidebar</a></li>
+                                    </ul>
+                                </li> --}}
 								<li class="nav-item nav-item-submenu">
-									<a href="#" class="nav-link">2 sidebars</a>
+									<a href="#" class="nav-link">Category</a>
 									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="../seed/sidebar_secondary.html" class="nav-link">Secondary sidebar</a></li>
-										<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
+										<li class="nav-item"><a href="{{ route('admin.category') }}" class="nav-link">All Categories</a></li>
+										<li class="nav-item"><a href="{{ route('admin.category.create') }}" class="nav-link">Create New category</a></li>
 									</ul>
 								</li>
 								<li class="nav-item nav-item-submenu">
-									<a href="#" class="nav-link">3 sidebars</a>
+									<a href="#" class="nav-link">Sub Category</a>
 									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="../seed/sidebar_right_hidden.html" class="nav-link">Right sidebar hidden</a></li>
-										<li class="nav-item"><a href="../seed/sidebar_right_visible.html" class="nav-link">Right sidebar visible</a></li>
+										<li class="nav-item"><a href="{{ route('admin.sub_category') }}" class="nav-link">All Sub Categories</a></li>
+										<li class="nav-item"><a href="{{ route('admin.sub_category.create') }}" class="nav-link">Add New Sub Category</a></li>
 									</ul>
 								</li>
-								<li class="nav-item nav-item-submenu">
-									<a href="#" class="nav-link">Content sidebars</a>
+								{{-- <li class="nav-item nav-item-submenu">
+									<a href="#" class="nav-link">Tags</a>
 									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="../seed/sidebar_content_left.html" class="nav-link">Left sidebar</a></li>
-										<li class="nav-item"><a href="../seed/sidebar_content_right.html" class="nav-link">Right sidebar</a></li>
+										<li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Left sidebar</a></li>
+										<li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">Right sidebar</a></li>
 									</ul>
-								</li>
-								<li class="nav-item"><a href="../seed/layout_boxed.html" class="nav-link">Boxed layout</a></li>
-								<li class="nav-item-divider"></li>
-								<li class="nav-item"><a href="../seed/navbar_fixed_main.html" class="nav-link">Fixed main navbar</a></li>
-								<li class="nav-item"><a href="../seed/navbar_fixed_secondary.html" class="nav-link">Fixed secondary navbar</a></li>
-								<li class="nav-item"><a href="../seed/navbar_fixed_both.html" class="nav-link">Both navbars fixed</a></li>
-								<li class="nav-item"><a href="../seed/layout_fixed.html" class="nav-link">Fixed layout</a></li>
+                                </li> --}}
+
 							</ul>
 						</li>
 						{{-- <li class="nav-item">

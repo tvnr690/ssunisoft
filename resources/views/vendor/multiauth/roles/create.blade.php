@@ -1,7 +1,7 @@
 @extends('multiauth::layouts.master')
 
 @section('breadcrum')
-    Create New Role
+    Create New Categoty
 @endsection
 
 

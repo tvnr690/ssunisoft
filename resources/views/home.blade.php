@@ -1,4 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.master2')
+
 @section('active')
     @if (\Request::is('home'))
 		class="menu-active"
