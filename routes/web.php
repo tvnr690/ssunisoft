@@ -50,5 +50,19 @@ Route::delete('admin/tag/{tag}', 'TagController@destroy')->name('admin.tag.delet
 Route::get('admin/tag/{tag}/edit', 'TagController@edit')->name('admin.tag.edit');
 Route::patch('admin/tag/{tag}', 'TagController@update')->name('admin.tag.update');
 
+/* +++++++++++++++++++++ All Blog Posts Routes +++++++++++++++++++++++++ */
+Route::get('admin/post', 'PostController@index')->name('admin.post');
+Route::get('admin/post/bloglist', 'PostController@bloglist')->name('admin.post.bloglist');
+Route::get('admin/post/create', 'PostController@create')->name('admin.post.create');
+Route::post('admin/post/store', 'PostController@store')->name('admin.post.store');
+Route::delete('admin/post/{post}', 'PostController@destroy')->name('admin.post.delete');
+Route::get('admin/post/{post}/show', 'PostController@show')->name('admin.post.show');
+Route::get('admin/post/{post}/edit', 'PostController@edit')->name('admin.post.edit');
+Route::patch('admin/post/{post}', 'PostController@update')->name('admin.post.update');
+Route::get('admin/post/fetch', 'PostController@fetch')->name('admin.post.fetch');
+
+
+
+
 
 

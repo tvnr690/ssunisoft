@@ -5,8 +5,8 @@
 @endsection
 
 @section('main-content')
-    	<!-- Main content -->
-		<div class="content-wrapper">
+    <!-- Main content -->
+	<div class="content-wrapper">
                 <!-- Content area -->
                 <div class="content">
 
@@ -58,8 +58,8 @@
 
                 </div>
                 <!-- /content area -->
-            </div>
-            <!-- /main content -->
+    </div>
+    <!-- /main content -->
 @endsection
 
 

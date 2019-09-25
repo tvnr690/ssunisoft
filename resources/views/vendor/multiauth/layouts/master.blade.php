@@ -344,8 +344,16 @@
                                 <li class="nav-item"><a href="{{ route('admin.register') }}" class="nav-link">New Admin</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-stack"></i><span>Blog posts</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="JSON forms">
+                                <li class="nav-item"><a href="{{ route('admin.post') }}" class="nav-link">Blog Posts Grid View</a></li>
+                                <li class="nav-item"><a href="{{ route('admin.post.bloglist') }}" class="nav-link">Blog Posts List View</a></li>
+                                <li class="nav-item"><a href="{{ route('admin.post.create') }}" class="nav-link">Create New Blog Post</a></li>
+                            </ul>
+                        </li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Blog Post </span></a>
+							<a href="#" class="nav-link"><i class="icon-stack"></i> <span>Blog Essentials</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
                                 {{-- <li class="nav-item nav-item-submenu">
@@ -2277,6 +2285,14 @@
     <script src="{{ asset('global_assets/js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_multiselect.js') }}"></script>
 
+
+    <script src="{{ asset('global_assets/js/plugins/editors/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/editor_ckeditor.js') }}"></script>
+
+    @section('custom-script')
+
+    @show
 
 
 

@@ -1,0 +1,1 @@
+@extends('multiauth::layouts.master')
