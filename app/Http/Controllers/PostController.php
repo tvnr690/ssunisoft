@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\category;
 use App\sub_category;
@@ -112,6 +112,17 @@ class PostController extends Controller
 
     public function fetch(Request $request)
     {
-        // $post_title = $request->p_
+        $cat = $request->get('cat');
+        $value = $request->get('value');
+        $subcategories = DB::table('categories')
+                ->join('sub_categories', 'categories.id', '=', 'sub_categories.cat_id')
+                ->select('sub_categories.*', 'categories.cat_name')
+                ->get();
+        $output = '<option value="">Select Sub Category</option>';
+        foreach($subcategories as $row)
+        {
+        $output .= '<option value="'.$row->id.'">'.$row->sub_cat_name.'</option>';
+        }
+        echo $output;
     }
 }

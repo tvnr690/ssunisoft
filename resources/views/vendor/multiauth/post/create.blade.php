@@ -43,30 +43,33 @@
                                             <option value="">Select Category</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
-                                            @endforeach			                               
+                                            @endforeach
 			                            </select>
 		                            </div>
                                 </div>
                                 <div class="form-group row">
 									<label class="col-form-label col-lg-2">Post Sub Category</label>
 									<div class="col-lg-10">
-			                            <select class="form-control">
-			                                <option value="opt1">Default select box</option>
-			                                <option value="opt2">Option 2</option>
-			                                <option value="opt3">Option 3</option>
-			                                <option value="opt4">Option 4</option>
-			                                <option value="opt5">Option 5</option>
-			                                <option value="opt6">Option 6</option>
-			                                <option value="opt7">Option 7</option>
-			                                <option value="opt8">Option 8</option>
+			                            <select class="form-control" name="p_sub_cat_id" id="subcategory">
+
 			                            </select>
 		                            </div>
                                 </div>
                                 <div class="form-group row">
 									<label class="col-form-label col-lg-2">Post Banner</label>
 									<div class="col-lg-10">
-										<input type="file" class="form-control-uniform" data-fouc>
-									</div>
+                                        <input type="file" class="form-control-uniform image" name="banner" id="banner" required data-fouc>
+                                        <input type="hidden" name="x1" value="" />
+                                        <input type="hidden" name="y1" value="" />
+                                        <input type="hidden" name="w" value="1920" />
+                                        <input type="hidden" name="h" value="1080" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <p><img id="previewimage" style="display:none;"/></p>
+                                    @if(session('path'))
+                                        <img src="{{ session('path') }}" />
+                                    @endif
                                 </div>
                                 <div class="form-group row">
 									<label class="col-form-label col-lg-2">Post Video Url</label>
@@ -98,31 +101,47 @@
 @endsection
 
 @section('custom-script')
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
 <script>
    $(document).ready(function(){
         $("#category").change( function(){
-            // alert("hai");
-        if($(this).val() != '')
-        {
-            var cat = $(this).attr("id");
-            var value = $(this).val();
-            var _token = $('input[name="_token"]').val();
-            alert(value);
-            $.ajax({
-                url:"{{ route('admin.post.fetch') }}",
-                method:"POST",
-                data:{select:select, value:value, _token:_token, dependent:dependent},
-                success:function(result)
-                {
-                $('#'+dependent).html(result);
-                }
-            })
-
-        }
-            
+            if($(this).val() != '')
+            {
+                var cat = $(this).attr("id");
+                var value = $(this).val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url:"{{ route('admin.post.fetch') }}",
+                    method:"GET",
+                    data:{cat:cat, value:value, _token:_token},
+                    success:function(result)
+                    {
+                        $('#subcategory').html(result);
+                    }
+                });
+            }
         });
-    }); 
+    });
+
+    jQuery(function($) {
+        var p = $("#previewimage");
+        $("body").on("change", ".image", function(){
+            var imageReader = new FileReader();
+            imageReader.readAsDataURL(document.querySelector(".image").files[0]);
+            imageReader.onload = function (oFREvent) {
+                p.attr('src', oFREvent.target.result).fadeIn();
+            };
+        });
+        $('#previewimage').imgAreaSelect({
+            onSelectEnd: function (img, selection) {
+                $('input[name="x1"]').val(selection.x1);
+                $('input[name="y1"]').val(selection.y1);
+                $('input[name="w"]').val(selection.width);
+                $('input[name="h"]').val(selection.height);
+            }
+        });
+    });
 </script>
+
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 @endsection
 

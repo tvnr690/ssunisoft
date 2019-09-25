@@ -17,7 +17,8 @@
 	<link href="{{ asset('assets/css/bootstrap_limitless.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('assets/css/layout.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('assets/css/components.min.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ asset('assets/css/colors.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/colors.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/imgareaselect.css') }}">
     <!-- /global stylesheets -->
 
 </head>
@@ -2290,6 +2291,7 @@
 	<script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/editor_ckeditor.js') }}"></script>
 
+    <script src="{{ asset('js/jquery.imgareaselect.min.js') }}"></script>
     @section('custom-script')
 
     @show
